@@ -1,6 +1,6 @@
-import pymongo
-from . import DB_URI, DB_NAME
-
+import pymongo, os
+DB_URI = os.environ.get("DATABASE_URL", "")
+DB_NAME = os.environ.get("DATABASE_NAME", "DB")
 dbclient = pymongo.MongoClient(DB_URI)
 database = dbclient[DB_NAME]
 
