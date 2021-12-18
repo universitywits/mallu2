@@ -96,8 +96,8 @@ async def start_command(client: Client, message: Message):
                 ]
             ]
         )
-        await message.reply_text(
-            text = START_MSG.format(
+        await message.reply_photo(photo="https://te.legra.ph/file/e6e9c28d84e9b0fc095ee.jpg",
+            caption = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
                 username = None if not message.from_user.username else '@' + message.from_user.username,
@@ -131,8 +131,8 @@ async def not_joined(client: Client, message: Message):
     except IndexError:
         pass
 
-    await message.reply(
-        text = FORCE_MSG.format(
+    await message.reply_photo(photo="https://te.legra.ph/file/28cc84836aab0d0e68e48.jpg",
+        caption = FORCE_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
                 username = None if not message.from_user.username else '@' + message.from_user.username,
